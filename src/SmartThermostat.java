@@ -7,9 +7,15 @@ public class SmartThermostat extends SmartDevice {
         super(brand, model); // Llama al constructor de SmartDevice
         this.minTemp = minTemp;
         this.maxTemp = maxTemp;
-        this.temperature = initialTemperature;
+
+        // Validar temperatura inicial dentro del rango
+        if (initialTemperature >= minTemp && initialTemperature <= maxTemp) {
+            this.temperature = initialTemperature;
+        } else {
+            System.out.println("Temperatura inicial fuera de rango. Se asigna temperatura mínima.");
+            this.temperature = minTemp;
+        }
     }
-    File > Project Structure > SDKs
 
     public void setTemperature(int temperature) {
         if (temperature >= minTemp && temperature <= maxTemp) {
