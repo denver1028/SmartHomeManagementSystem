@@ -1,9 +1,6 @@
-public abstract class SmartDevice {
+public class SmartDevice {
     private String brand;
     private String model;
-    private int temperature;
-    private int minTemp;
-    private int maxTemp;
     private boolean status;
 
     public SmartDevice(String brand, String model) {
@@ -14,12 +11,16 @@ public abstract class SmartDevice {
 
     public void turnOn() {
         status = true;
-        System.out.println(model + " is now ON.");
+        System.out.println("Dispositivo encendido.");
     }
 
     public void turnOff() {
         status = false;
-        System.out.println(model + " is now OFF.");
+        System.out.println("Dispositivo apagado.");
+    }
+
+    public boolean getStatus() {
+        return status;
     }
 
     public String getBrand() {
@@ -29,17 +30,4 @@ public abstract class SmartDevice {
     public String getModel() {
         return model;
     }
-
-    public String getStatus() {
-        return status ? "ON" : "OFF";
-    }
-
-    public boolean isOn() {
-        return status;
-    }
-
-    public void deviceInfo() {
-        System.out.println("SmartDevice - Brand: " + brand + ", Model: " + model + ", Status: " + getStatus());
-    }
-
 }
