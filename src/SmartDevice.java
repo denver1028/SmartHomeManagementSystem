@@ -1,6 +1,9 @@
 public abstract class SmartDevice {
     private String brand;
     private String model;
+    private int temperature;
+    private int minTemp;
+    private int maxTemp;
     private boolean status;
 
     public SmartDevice(String brand, String model) {
@@ -38,7 +41,5 @@ public abstract class SmartDevice {
     public void deviceInfo() {
         System.out.println("SmartDevice - Brand: " + brand + ", Model: " + model + ", Status: " + getStatus());
     }
-
-
 
 }
